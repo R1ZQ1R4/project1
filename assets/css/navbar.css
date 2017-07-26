@@ -1,0 +1,55 @@
+.navbar-toggle, .dropdown, .toggle{
+	cursor: pointer;
+}
+
+.navbar{
+	text-transform: capitalize;
+	color: #fff;
+	font-size: 1em;
+	height: 60px;
+	background: #2196F3;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	padding: 1em 0;
+	box-sizing: border-box;
+}
+
+.navbar.main{
+	width: 260px;
+	background: #333333;
+}
+
+.navbar.sub{
+}
+
+.navbar.sub .dropdown{
+	
+
+}
+
+.navbar a{
+
+}
+
+.dropdown{
+	position: relative;
+}
+
+.dropdown.collapse{
+	width: 120px;
+	height: auto;
+	background: #fff;
+	border: 1px solid #ddd;
+	position: absolute;
+	top: 60px;
+	right: 0;
+}
+.dropdown.list{
+	color: #333;
+	list-style: none;
+}
+.dropdown.list li a{
+	padding: 1.2em 1em 1em 1em;
+	display: block;
+}

@@ -1,0 +1,89 @@
+*{
+	margin: 0 auto;
+	padding: 0;
+}
+
+body{
+	font-family: Roboto, sans-serif;
+}
+
+.clear{
+	clear: both;
+}
+
+a{
+	text-decoration: none;
+	color: inherit;
+}
+
+a:hover{
+	text-decoration: underline;
+}
+
+.shadow, .modal, .dropdown.collapse{
+	z-index: 999;
+	background: #fff;
+	-webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.shadow, .modal, .modal-body .btn-submit, .dropdown.collapse:hover{
+		transition: box-shadow 300ms;
+}
+
+.shadow:hover, .modal:hover, .modal-body .btn-submit:hover, .dropdown.collapse:hover{
+	-webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+}
+
+.alert{
+	box-sizing: border-box;
+	display: block;
+	width: 100%;
+	padding: 1em 2em;
+	font-size: 1em;
+	color: #fff;
+	font-weight: 600;
+}
+
+.alert.danger{
+	background: #f44336;
+}
+
+.alert.success{
+	background: #4CAF50;
+}
+
+.alert.info{
+	background: #2196F3;
+}
+
+.alert.warning{
+	background: #ffeb3b;
+}
+
+.bounce, .modal{
+	animation: bounce 500ms ease-in-out;
+}
+
+@keyframes bounce{
+	0%{
+		transform: scale(0);
+		-webkit-transform: scale(0);
+		-moz-transform: scale(0);
+	}50%{
+		transform: scale(1.1);
+		-webkit-transform: scale(1.1);
+		-moz-transform: scale(1.1);
+	}80%{
+		transform: scale(0.95);
+		-webkit-transform: scale(0.95);
+		-moz-transform: scale(0.95);
+	}100%{
+		transform: scale(1);
+		-webkit-transform: scale(1);
+		-moz-transform: scale(1);
+	}
+}
