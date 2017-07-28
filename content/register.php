@@ -1,24 +1,26 @@
 <?php
     if(isset($_POST['btn_register'])){
+
         $name = $_POST['name'];
         $email = $_POST['email'];
         $pass = $_POST['password'];
         $re_pass = $_POST['re_password'];
+        $level = 'user';
+
         if ( !empty($name) AND !empty($email) AND !empty($pass) AND !empty($re_pass)) {
             
         
             if ( $pass == $re_pass) {
-                $name = $mysqli->real_escape_string($name);
-                $email = $mysqli->real_escape_string($email);
-                $pass = $mysqli->real_escape_string($pass);
+                // $name = $mysqli->real_escape_string($name);
+                // $email = $mysqli->real_escape_string($email);
+                // $pass = $mysqli->real_escape_string($pass);
 
-                $insert = "INSERT INTO user (name, email, password, level) VALUES ('$name', '$email', '$pass', 'user')";
-                $result = mysqli_query($mysqli, $insert);
+                $stmt = $mysqli->prepare("INSERT INTO user (name, email, password, level) VALUES (?, ?, ?, ?)");
+                $stmt->bind_param("ssss", $name, $email, $pass, $level);
+                // $result = mysqli_query($mysqli, $insert);
+                $stmt->execute();
+                $stmt ? $alert_succes = "sukses mendaftar!" : '';
 
-   
-                if ($result) {
-                    $alert_succes = "sukses mendaftar!";
-                }
             }else{
                 $alert_danger = "password tidak sama !";
             }
@@ -35,15 +37,15 @@
         <h2>Register</h2>
         </div>
         <?php
-            if(isset($alert_danger)){ 
+            if(isset($alert_danger)): 
         ?>
            <div class='alert danger'> <?= $alert_danger ?> </div>
         <?php
-            }else if(isset($alert_succes)){
+            elseif(isset($alert_succes)):
         ?>
             <div class="alert success"> <?= $alert_succes ?> </div>
         <?php
-            }
+            endif;
         ?>
         
             <form class="modal-body" method="POST"">

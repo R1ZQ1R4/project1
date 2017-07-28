@@ -21,7 +21,7 @@
 	    if( !empty($page) && file_exists($alamat)){
 	        include_once($alamat);
 	    }else{
-	        header('Location: ?page=login');
+	        header('Location: ?page=home');
 	    }
 	?>
 	<script src="assets/js/jquery-3.1.0.min.js" type="text/javascript"></script>

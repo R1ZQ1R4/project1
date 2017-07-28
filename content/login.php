@@ -1,28 +1,42 @@
 <?php
-    if ( isset($_SESSION['name'])) {
-        header("Location: ?page=admin");
-    }
+    isset($_SESSION['name']) ? header("Location: ?page=admin") : '';
 ?>
 
 <?php
     if(isset($_POST['btn_login'])){
 
-        $email = $_POST['email'];
-        $pass = $_POST['password'];
+        $email = $mysqli->real_escape_string($_POST['email']);
+        $pass = $mysqli->real_escape_string($_POST['password']);
 
         if ( !empty($email) AND !empty($pass)) {
-            $email = $mysqli->real_escape_string($email);
-            $pass = $mysqli->real_escape_string($pass);
 
-            $query = "SELECT name FROM user WHERE (email='$email' AND password='$pass')";
-            $result = mysqli_query($mysqli, $query);
-            $row = $result->fetch_assoc();
+            //procedural mysqli
+            // $email = $mysqli->real_escape_string($email);
+            // $pass = $mysqli->real_escape_string($pass);
+
+            // $query = "SELECT name FROM user WHERE (email='$email' AND password='$pass')";
+            // $result = mysqli_query($mysqli, $query);
+            // $row = $result->fetch_assoc();
+
+            // //prepared statement OOP
+            // // membuat prepared statement
+            // $stmt = $mysqli->prepare("SELECT name FROM user WHERE (email=? AND password=?)");
+            // //bind parameter
+            // // s = string, i = integer, d = double, b = blob (binary)
+            // $stmt->bind_param("ss", $email, $pass);
+            // //eksekusi
+            // $stmt->execute();
+
+            //versi 2 code OOP version
+            $query = $mysqli->query("SELECT name FROM user WHERE email='$email' AND password='$pass'");
+            $result = $query->fetch_assoc();
+            $row = $query->num_rows;
             
-            if ( mysqli_num_rows($result) == 0 ) {
+            if ( $row == 0 ) {
                 $alert_danger = "Email atau Password Salah !";
                 
             }else{
-                $_SESSION['name'] = $row['name'];          
+                $_SESSION['name'] = $result['name'];          
                 header('Location: ?page=admin');
             }
 
