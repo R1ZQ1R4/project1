@@ -5,7 +5,7 @@
 
 body{
 	font-family: Roboto, sans-serif;
-	background: #fafafa;
+	background: #f2f5f7;
 }
 
 .clear{
@@ -21,19 +21,35 @@ a:hover{
 	text-decoration: underline;
 }
 
-.shadow, .modal, .dropdown.collapse{
+.btn{
+	font-size: 1rem;
+	font-weight: 600;
+	color: white;
+	padding: 0.6em 1.2em;
+	border: none;
+	background: rgba(233, 30, 99, 0.9);
+	border-bottom: 2px solid rgba(233, 30, 99, 1);
+	text-transform: capitalize;
+	cursor: pointer;
+}
+.shadow, .modal, .dropdown.collapse, nav, main .container{
 	z-index: 999;
 	background: #fff;
 	-webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     -moz-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
-
-.shadow, .modal, .modal-body .btn-submit, .dropdown.collapse:hover{
+main .preview-image:hover{
+	cursor: pointer;
+	-webkit-box-shadow: 0 0 6px rgba(0, 0, 0, 0.4);
+    -moz-box-shadow: 0 0 6px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.4);
+}
+.shadow, .modal, .btn-submit, .dropdown.collapse:hover, nav, main .container, main .preview-image{
 		transition: box-shadow 300ms;
 }
 
-.shadow:hover, .modal:hover, .modal-body .btn-submit:hover, .dropdown.collapse:hover{
+.shadow:hover, .modal:hover, .btn-submit:hover, .dropdown.collapse:hover, nav:hover, main .container:hover{
 	-webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
     -moz-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);

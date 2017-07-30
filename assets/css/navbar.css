@@ -2,19 +2,26 @@
 	cursor: pointer;
 }
 
+nav{
+		top: 0;
+		width: 100%;
+		position: fixed;
+		background: #2196F3;
+}
 .navbar{
 	text-transform: capitalize;
 	color: #fff;
 	font-size: 1em;
 	height: 60px;
-	background: #2196F3;
 	width: 100%;
 	display: flex;
 	align-items: center;
 	padding: 1em 0;
 	box-sizing: border-box;
 }
-
+.navbar-brand, .navbar-brand:hover{
+	text-decoration: none;
+}
 .navbar.main{
 	width: 260px;
 	background: #333333;

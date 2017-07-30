@@ -6,6 +6,7 @@
 
 	//ternary operator (?:) ? sebagai pengganti if dan : sebagai else
 	!isset($_SESSION['name']) ? header('Location: ?page=login') : '';
+	$_SESSION['level']==0 ? header('Location: ?page=home') : '';
 
 	//alternative if ele
 	// if ( !isset($_SESSION['name'])):

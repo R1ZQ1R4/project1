@@ -53,7 +53,7 @@
                 <input type="email" name="email" placeholder="Email" minlength="8" maxlength="100"/>
                 <input type="password" name="password" placeholder="Password" minlength="8" maxlength="100" />
                 <input type="password" name="re_password" placeholder="Re-Password" minlength="8" maxlength="100"/>
-                <button class="btn-submit" name="btn_register" role="submit">submit</button>
+                <button class="btn btn-submit" name="btn_register" role="submit">submit</button>
                 <div class="clear"></div>
             </form>
         <div class="modal-footer">
