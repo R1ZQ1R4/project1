@@ -30,4 +30,12 @@ $(document).ready(function() {
 
 	// 	});
 	// });
+
+	$('.scroll').click(function() {
+		var key = $(this).attr('scroll'),
+			go = $(key);
+		$('html, body').animate({
+			scrollTop: go.offset().top
+		}, 'slow'); 
+	});
 });

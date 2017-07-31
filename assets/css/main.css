@@ -1,6 +1,6 @@
 main{
 	padding: 0 30px;
-	margin-top: -120px;
+	margin-top: -20vh;
 }
 
 main .container{
@@ -8,16 +8,21 @@ main .container{
 	background: #fff;
 	box-sizing: border-box;
 }
-
-main .main.title{
-	padding: 100px 0 130px;
+main .main-title{
+	padding: 100px 0 130px;	
+}
+.main-title{
+	text-transform: capitalize;
 	text-align: center;
 }
-main .main.title h1{
+.main-title.inverse{
+	color: #fff;
+}
+main .main-title h1{
 	color: rgba(0,0,0,0.8);
 	margin-bottom: 10px;
 }
-main .main.title p{
+main .main-title p{
 	color: rgba(0,0,0,0.3);
 	font-weight: 500;
 }
@@ -45,40 +50,7 @@ main .preview-image{
 	overflow: hidden;
 }
 main .preview-image img{
+	display: block;
 	width: 100%;
 }
 
-main .btn{
-	width: 160px;
-	position: absolute;
-	right: 0;
-	left: 0;
-}
-
-
-.card-wrap{
-	width: 100%;
-	display: flex;
-	max-width: 1200px;
-	padding: 0 -15px;
-}
-
-.card{
-	width: 33.333333%;
-	padding: 0 15px;
-	margin-bottom: 30px;
-	box-sizing: border-box;
-}
-.card .card-item{
-	background: #000;
-}
-
-.card-item .card.header{
-	width: 100%;
-	height: auto;
-}
-
-.card-item .card.header img{
-	width: 100%;
-	height: auto;
-}

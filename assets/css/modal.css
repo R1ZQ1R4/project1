@@ -42,6 +42,8 @@
 }
 
 .modal-body .btn-submit{
+	background: #ec407a;
+	border-bottom: 3px solid rgba(233, 30, 99, 1);
 	margin-top: 0.5em;
 	float: right;
 	margin-right: -1em;

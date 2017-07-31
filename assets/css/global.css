@@ -22,39 +22,68 @@ a:hover{
 }
 
 .btn{
+	display: block;
 	font-size: 1rem;
 	font-weight: 600;
 	color: white;
-	padding: 0.6em 1.2em;
+	padding: 8px 24px;
 	border: none;
-	background: rgba(233, 30, 99, 0.9);
-	border-bottom: 2px solid rgba(233, 30, 99, 1);
 	text-transform: capitalize;
 	cursor: pointer;
 }
-.shadow, .modal, .dropdown.collapse, nav, main .container{
-	z-index: 999;
-	background: #fff;
-	-webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    -moz-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+
+.btn.global{
+	background: #ec407a;
+	border-bottom: 3px solid rgba(233, 30, 99, 1);
 }
+/*solo image hover shadow*/
 main .preview-image:hover{
 	cursor: pointer;
 	-webkit-box-shadow: 0 0 6px rgba(0, 0, 0, 0.4);
     -moz-box-shadow: 0 0 6px rgba(0, 0, 0, 0.4);
     box-shadow: 0 0 6px rgba(0, 0, 0, 0.4);
 }
-.shadow, .modal, .btn-submit, .dropdown.collapse:hover, nav, main .container, main .preview-image{
+
+/*main global shadow*/
+.shadow, 
+.modal, 
+.dropdown.collapse, 
+nav, 
+main .container,
+.card .card-item,
+.card-2 .card-item{
+	background: #fff;
+	-webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.shadow, 
+.modal, 
+.btn-submit, 
+.dropdown.collapse:hover, 
+nav, 
+main .container, 
+main .preview-image,
+.card .card-item,
+.card-2 .card-item{
 		transition: box-shadow 300ms;
 }
 
-.shadow:hover, .modal:hover, .btn-submit:hover, .dropdown.collapse:hover, nav:hover, main .container:hover{
+.shadow:hover, 
+.modal:hover, 
+.btn-submit:hover, 
+.dropdown.collapse:hover, 
+nav:hover, 
+main .container:hover,
+.card .card-item:hover,
+.card-2 .card-item:hover{
 	-webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
     -moz-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
 }
 
+/*alert*/
 .alert{
 	box-sizing: border-box;
 	display: block;
@@ -81,6 +110,8 @@ main .preview-image:hover{
 	background: #ffeb3b;
 }
 
+
+/*animation frame*/
 .bounce, .modal{
 	animation: bounce 500ms ease-in-out;
 }

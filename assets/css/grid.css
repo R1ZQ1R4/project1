@@ -12,3 +12,93 @@ xl = extra large >= 1200px
 	width: 100%;
 	max-width:  1200px;
 }
+
+.card-wrap{
+	margin-top: 30px;
+	max-width: 1200px;
+	width: 100%;
+	padding: 0 30px;
+	
+}
+.card-wrap .main-title{
+	padding: 40px 0 52px;	
+}
+.card-row{
+	display: flex;
+	flex-flow: row wrap;
+	margin: 0 -15px;
+
+}
+
+.card{
+	display: flex;
+	flex: 1 0 auto;
+	width: 33.3333%;
+	padding: 0 15px;
+	margin-bottom: 30px;
+	box-sizing: border-box;
+
+}
+.card-2{
+	display: flex;
+	flex: 1 0 auto;
+	width: 25%;
+	padding: 0 15px;
+	margin-bottom: 30px;
+	box-sizing: border-box;
+}
+.card .card-item{
+	cursor: pointer;
+	display: block;
+}
+.card .card-item:hover,
+.card-2 .card-item:hover{
+	text-decoration: none;
+}
+
+.card-item .card-header{
+	position: relative;
+	width: 100%;
+	height: auto;
+}
+
+.card-item .card-header img{
+	display: block;
+	width: 100%;
+	height: auto;
+}
+.card-item .card-overlay{
+	transition: transform ease-in-out 300ms;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background: rgba(0,0,0,0.7);
+	transform: scale(0);
+}
+.card-item:hover .card-overlay{
+	transform: scale(1);
+}
+.card-overlay .overlay-title{
+	font-size: 2rem;
+	color: #fff;
+}
+.card-body, .card-footer{
+	width: 100%;
+	padding: 15px;
+	box-sizing: border-box;
+}
+.card-item .card-body .card-title{
+
+	margin-bottom: 6px;
+}
+.card-item .card-body .card-content{
+	
+}
+.card-item .card-footer .card-info{
+
+}
