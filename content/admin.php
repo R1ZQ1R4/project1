@@ -1,5 +1,5 @@
 <?php
-
+	
 	// Null coalescing operator *PHP 7*
 	// pengganti if, dan else NULL
 	// $_SESSION['nama'] ?? header('Location: ?page=login');
@@ -8,21 +8,30 @@
 	!isset($_SESSION['name']) ? header('Location: ?page=login') : '';
 	$_SESSION['level']==0 ? header('Location: ?page=home') : '';
 
-	//alternative if ele
-	// if ( !isset($_SESSION['name'])):
-	// 	header("Location: ?page=login");
-	//elseif
-	//else
-	// endif;
-?>
+	$control = $_GET['control'];
+	!$control ? header('Location:?page=admin&control=user') : '';
 
-<nav class="navbar">
-	<div class="navbar main">
-	<a class="navbar-toggle" role="button">menu</a>
-	<a class="navbar-brand" href="index.php">Dashboard</a>
+	!isset($_GET['sort']) ? $_GET['sort']=1 : '';
+?>
+	
+<div class="" id="tampilan">
+<?php
+
+	if (isset($_GET['update'])) {
+		include_once('content/admin_' . $control . '_update.php');
+	} else if (isset($_GET['insert'])){
+		include_once('content/admin_' . $control . '_insert.php');
+	}
+?>
+</div>
+
+<nav class="navbar inverse">
+	<div class="navbar-main">
+	<a class="navbar-toggle default" id="slide-left" role="button">menu</a>
+	<a class="navbar-brand" href="?page=home">Home</a>
 	</div>
 
-	<div class="navbar sub">
+	<div class="navbar-sub">
 
 		<a class="dropdown" role="button"><?= $_SESSION['name'] ?>
 			<!-- <div class="dropdown collapse">
@@ -38,3 +47,51 @@
 	
 	</div>
 </nav>
+
+<div class="admin">
+	<aside>
+		<div class="aside-container">
+			<ul class="menu-list">
+				<li><a href="?page=admin&control=user">user</a></li>	
+				<li><a href="?page=admin&control=category">category</a></li>	
+				<li><a href="?page=admin&control=place">place</a></li>	
+				<li><a href="?page=admin&control=article">article</a></li>	
+				<li><a href="?page=admin&control=comment">comment</a></li>	
+				<li><a href="?page=admin&control=hotel">hotel</a></li>	
+				<li><a href="?page=admin&control=hotel_room">room</a></li>	
+				<li><a href="?page=admin&control=transaction">transaction</a></li>	
+			</ul>
+		</div>
+	</aside>
+</div>
+
+<div class="admin-main">
+		<div class="admin-container">
+			<div class="admin-title">
+				<div>
+					<h1><?= $control ?></h1>
+				</div>
+
+				<a href="?page=admin&sort=<?= $_GET['sort'] ?>&control=<?= $control ?>&insert=true">
+				<button class="btn-plus" id="btn-plus" name="btn-plus" role="submit">Tambah</button>
+				</a>
+			</div>
+			<div class="admin-content">
+				<?php
+					switch ($control) {
+						case 'user':
+							$main->user();
+							break;
+						
+						default:
+							break;
+					}
+				?>
+			</div>
+
+		</div>
+		
+</div>
+<div class="admin-footer">
+			&copy 2017 SMKN 1 Bangil
+</div>

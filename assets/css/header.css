@@ -1,11 +1,5 @@
 header{
 	background-image: url(../img/the_lost_hindu_temple_in_the_jungle_mist___indonesia-wallpaper-2560x1600.jpg);
-	background-size: cover;
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	-ms-background-size: cover;
-	-o-background-size: cover;
-	background-position: center;
 }
 
 .hero{
@@ -26,36 +20,16 @@ header{
 	color: rgba(255,255,255,0.8);
 	transition-property: color, background;
 	transition: 700ms ease-in-out;
+	box-shadow: 0 3px 4px rgba(0,0,0,0.2)
 }
 .btn.ghost:hover{
 
 	background: rgba(255,255,255,0.3);
 }
-footer{
-	padding: 60px 30px;
-	margin-top: 30px;
-	background: #2196F3;
-	width: 100%;
-	box-sizing: border-box;
+.big-title{
+	margin-top: -10vh;
+	color: #fff;
+	font-size: 3rem;
+	font-weight: 400;
+	text-shadow: 0 3px 4px rgba(0,0,0,0.2);
 }
-
-.hero-subscribe{
-	/*background-image: url(../img/803103.jpg);
-	background-size: cover;
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	-ms-background-size: cover;
-	-o-background-size: cover;
-	background-position: center;*/
-	max-width: 1200px;
-	width: 100%;
-	position: relative;
-}
-
-.subscribe-form{
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
-}
-

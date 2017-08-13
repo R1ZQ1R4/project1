@@ -1,4 +1,7 @@
-<?php include_once("core/init.php") ?>
+<?php 
+    include_once("core/init.php"); 
+    $main = new controller();
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -10,8 +13,11 @@
     <link rel="stylesheet" type="text/css" href="assets/css/modal.css">
     <link rel="stylesheet" type="text/css" href="assets/css/navbar.css">
     <link rel="stylesheet" type="text/css" href="assets/css/header.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/footer.css">
     <link rel="stylesheet" type="text/css" href="assets/css/main.css">
     <link rel="stylesheet" type="text/css" href="assets/css/grid.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/admin.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/form.css">
     <style>
         
     </style>
@@ -19,6 +25,8 @@
 
 <body>
     <?php
+    	$place = @$_GET['place'];
+    	$title = @$_GET['title'];
 	    $page = $_GET['page'];
 	    $alamat = 'content/' . $page . '.php';
 	    

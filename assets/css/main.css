@@ -2,6 +2,9 @@ main{
 	padding: 0 30px;
 	margin-top: -20vh;
 }
+.normalize{
+	margin-top: 90px !important;
+}
 
 main .container{
 	padding: 0 30px 120px;
@@ -54,3 +57,30 @@ main .preview-image img{
 	width: 100%;
 }
 
+main .main-article p{
+	text-align: justify;
+	margin-bottom: 30px;
+	line-height: 140%;
+}
+
+main .main-article p:first-child{
+	text-indent: 10%;
+}
+
+main .main-article img{
+	width: 50%;
+	display: flex;
+	margin-bottom: 30px;	
+}
+
+main .main-static{
+	min-height: 600px;
+	display: flex;
+}
+main .main-article .side-img{
+	background-image: url(../img/the_lost_hindu_temple_in_the_jungle_mist___indonesia-wallpaper-2560x1600.jpg);
+	width: 66.6666%;
+}
+main .main-article .side-content{
+	width: 33.3333%;
+}

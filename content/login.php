@@ -51,7 +51,8 @@
 ?>
 
 <div class="wrap-modal">
-        <div class="modal">
+    <div class="modal-box">
+        <div class="modal" id="stop">
         <div class="modal-header">
         <h2>Login</h2>
         </div>
@@ -74,4 +75,5 @@
             <a class="form-link" href="?page=register">buat akun !</a>
         </div>
         </div>
+    </div>
 </div>

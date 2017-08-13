@@ -2,12 +2,15 @@
 	cursor: pointer;
 }
 
-nav{
+nav, .navbar-main{
 		z-index: 999;
 		top: 0;
 		width: 100%;
 		position: fixed;
 		background: #2196F3;
+}
+nav.inverse{
+	background: #fff;
 }
 .navbar{
 	text-transform: capitalize;
@@ -20,23 +23,36 @@ nav{
 	padding: 1em 0;
 	box-sizing: border-box;
 }
+.navbar-brand{
+	width: 100%;
+	margin-left: 0;
+}
 .navbar-brand, .navbar-brand:hover{
 	text-decoration: none;
 }
-.navbar.main{
+.navbar-main{
+	height: 60px;	
+	box-sizing: border-box;
+	margin-left: 0;
+	min-width: 260px;
 	width: 260px;
-	background: #333333;
+	display: flex;
 }
 
-.navbar.sub{
+.navbar-sub{
+	display: flex;
+	margin: 0 0 0 auto;
+	background: #fff; 
+	color: #333;
 }
 
-.navbar.sub .dropdown{
+.navbar-sub .dropdown{
 	
 
 }
 
 .navbar a{
+	padding: 20px;
 
 }
 

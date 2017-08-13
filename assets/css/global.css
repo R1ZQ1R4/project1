@@ -1,6 +1,7 @@
 *{
 	margin: 0 auto;
 	padding: 0;
+
 }
 
 body{
@@ -13,12 +14,42 @@ body{
 }
 
 a{
+
 	text-decoration: none;
 	color: inherit;
 }
 
 a:hover{
 	text-decoration: underline;
+}
+
+.default:hover, .pagination a{
+	text-decoration: none;
+}
+
+.cover-background, header, main .main-static .side-img{
+	background-size: cover;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-ms-background-size: cover;
+	-o-background-size: cover;
+	background-position: center;
+}
+.scroll-top{
+	font-weight: 600;
+	text-transform: uppercase;
+	position: fixed;
+	padding: 15px;
+	bottom: 30px;
+	right: 30px;
+	transition: 300ms ease-in-out;
+	transition-property: background, color, box-shadow;
+	background: #fff;
+}
+.scroll-top:hover{
+	background: #2196F3;
+	color: #fff;
+	text-decoration: none;
 }
 
 .btn{
@@ -32,9 +63,13 @@ a:hover{
 	cursor: pointer;
 }
 
-.btn.global{
-	background: #ec407a;
+.btn.global, .btn-plus, .btn-control, .pagination a{
+	cursor: pointer;
+	background: #ec407a !important;
 	border-bottom: 3px solid rgba(233, 30, 99, 1);
+}
+.btn-control:hover{
+	text-decoration: none;
 }
 /*solo image hover shadow*/
 main .preview-image:hover{
@@ -46,43 +81,72 @@ main .preview-image:hover{
 
 /*main global shadow*/
 .shadow, 
-.modal, 
+.modal,
+.modal-admin, 
 .dropdown.collapse, 
 nav, 
 main .container,
 .card .card-item,
-.card-2 .card-item{
+.card-2 .card-item,
+.scroll-top,
+.btn-plus,
+.btn-control,
+.preview-float,
+.pagination a{
 	background: #fff;
 	-webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     -moz-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
+footer,{
+	-webkit-box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.2);
+}
 
 .shadow, 
-.modal, 
+.modal,
+.modal-admin, 
 .btn-submit, 
+.btn.global,
 .dropdown.collapse:hover, 
 nav, 
 main .container, 
 main .preview-image,
 .card .card-item,
-.card-2 .card-item{
+.card-2 .card-item,
+footer,
+.btn-plus,
+.btn-control,
+.preview-float,
+.pagination a{
 		transition: box-shadow 300ms;
 }
 
 .shadow:hover, 
 .modal:hover, 
-.btn-submit:hover, 
+.modal-admin:hover,
+.btn-submit:hover,
+.btn.global:hover, 
 .dropdown.collapse:hover, 
 nav:hover, 
 main .container:hover,
 .card .card-item:hover,
-.card-2 .card-item:hover{
+.card-2 .card-item:hover,
+.scroll-top:hover,
+.btn-plus:hover,
+.btn-control:hover,
+.preview-float:hover,
+.pagination a:hover{
 	-webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
     -moz-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
 }
-
+footer:hover{
+	-webkit-box-shadow: 0 -3px 6px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 0 -3px 6px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 -3px 6px rgba(0, 0, 0, 0.3);
+}
 /*alert*/
 .alert{
 	box-sizing: border-box;
@@ -112,7 +176,7 @@ main .container:hover,
 
 
 /*animation frame*/
-.bounce, .modal{
+.bounce, .modal, .modal-admin, .preview-image{
 	animation: bounce 500ms ease-in-out;
 }
 

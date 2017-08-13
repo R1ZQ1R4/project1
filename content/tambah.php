@@ -14,12 +14,11 @@
                 // $name = $mysqli->real_escape_string($name);
                 // $email = $mysqli->real_escape_string($email);
                 // $pass = $mysqli->real_escape_string($pass);
-
-                $stmt = $mysqli->prepare("INSERT INTO user (name, email, password, level) VALUES (?, ?, ?, ?)");
-                $stmt->bind_param("ssss", $name, $email, $pass, $level);
-                // $result = mysqli_query($mysqli, $insert);
-                $stmt->execute();
-                $stmt ? $alert_succes = "sukses mendaftar!" : '';
+                    $insert = $mysqli->prepare("INSERT INTO user (name, email, password) VALUES (?, ?, ?");
+                    $insert->bind_param("sss", $name, $email, $pass);
+                    $insert->execute();
+                    $insert ? $alert_succes = "sukses mendaftar!" : '';
+                
 
             }else{
                 $alert_danger = "password tidak sama !";
@@ -32,7 +31,6 @@
 ?>
 
 <div class="wrap-modal">
-    <div class="modal-box">
         <div class="modal">
         <div class="modal-header">
         <h2>Register</h2>
@@ -62,4 +60,3 @@
         </div>
         </div>
     </div>
-</div>

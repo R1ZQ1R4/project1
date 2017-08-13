@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 30, 2017 at 09:02 PM
+-- Generation Time: Aug 13, 2017 at 06:48 PM
 -- Server version: 10.1.16-MariaDB
 -- PHP Version: 7.0.9
 
@@ -75,17 +75,11 @@ INSERT INTO `category` (`category_id`, `category_name`) VALUES
 --
 
 CREATE TABLE `comment` (
+  `comment_id` int(10) NOT NULL,
   `article_id` int(10) NOT NULL,
   `user_id` int(10) NOT NULL,
   `comment_content` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `comment`
---
-
-INSERT INTO `comment` (`article_id`, `user_id`, `comment_content`) VALUES
-(1, 5, 'First Comment bro !!');
 
 -- --------------------------------------------------------
 
@@ -191,19 +185,27 @@ CREATE TABLE `user` (
   `name` varchar(100) NOT NULL,
   `email` varchar(100) NOT NULL,
   `password` varchar(100) NOT NULL,
-  `level` int(1) NOT NULL
+  `level` int(1) NOT NULL,
+  `picture` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`user_id`, `name`, `email`, `password`, `level`) VALUES
-(4, 'halo', 'halo@halo.com', 'halo', 0),
-(5, 'Rizqiramadhan', 'Rizqi@gmail.com', 'rizqiramadhan', 0),
-(6, 'Administrator', 'admin@admin.admin', 'admin123', 1),
-(7, 'testing123', 'testing@test.test', 'testing123', 0),
-(8, 'Kikka chan', 'kikka@kikka.com', 'kikka123', 0);
+INSERT INTO `user` (`user_id`, `name`, `email`, `password`, `level`, `picture`) VALUES
+(4, 'hellobro', 'halo@halo.com', 'halo1234', 0, ''),
+(6, 'Administrator', 'admin@admin.admin', 'admin123', 1, ''),
+(7, 'testing123', 'testing@test.test', 'testing123', 1, ''),
+(8, 'Kikka chan', 'kikka@kikka.com', 'kikka123', 0, ''),
+(12, 'oppaoppa', 'oppa@oppa.oppa', 'oppa1234', 0, 'avrillavgine-630x420.jpg'),
+(17, 'anjas mara dita', 'anjas@mara.dita', 'anjasmara', 0, ''),
+(18, 'abogoboga', 'abo@abo.abo', 'abogoboga', 0, ''),
+(19, 'anjanganjang', 'anjang@anjang.anjang', 'anjanganjang', 0, ''),
+(20, 'die@diedie@die', 'die@die.die', 'die@diedie@die', 0, ''),
+(21, 'massages', 'massages@mail.com', 'massages', 0, ''),
+(22, 'googleman', 'google@google.com', 'googleman', 0, 'Struktur_3.PNG'),
+(23, 'halo@halo.halo', 'halo@halo.halo', 'halohalohalo', 0, '');
 
 --
 -- Indexes for dumped tables
@@ -231,6 +233,7 @@ ALTER TABLE `category`
 -- Indexes for table `comment`
 --
 ALTER TABLE `comment`
+  ADD PRIMARY KEY (`comment_id`),
   ADD KEY `index_article` (`article_id`),
   ADD KEY `index_user` (`user_id`);
 
@@ -284,6 +287,11 @@ ALTER TABLE `article`
 ALTER TABLE `category`
   MODIFY `category_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
+-- AUTO_INCREMENT for table `comment`
+--
+ALTER TABLE `comment`
+  MODIFY `comment_id` int(10) NOT NULL AUTO_INCREMENT;
+--
 -- AUTO_INCREMENT for table `hotel`
 --
 ALTER TABLE `hotel`
@@ -307,7 +315,7 @@ ALTER TABLE `transaction`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `user_id` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `user_id` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 --
 -- Constraints for dumped tables
 --
