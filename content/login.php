@@ -28,7 +28,7 @@
             // $stmt->execute();
 
             //versi 2 code OOP version
-            $query = $mysqli->query("SELECT name, level FROM user WHERE email='$email' AND password='$pass'");
+            $query = $mysqli->query("SELECT user_name, level FROM user WHERE email='$email' AND password='$pass'");
             $result = $query->fetch_assoc();
             $row = $query->num_rows;
             
@@ -37,7 +37,7 @@
                 
             }else{
                 $_SESSION['level'] = $result['level'];  
-                $_SESSION['name'] = $result['name'];          
+                $_SESSION['name'] = $result['user_name'];          
                 header('Location: ?page=admin');
             }
 

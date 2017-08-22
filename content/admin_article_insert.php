@@ -2,7 +2,7 @@
 
     if(isset($_POST['btn_register'])){
 
-                $insert = $main->insert_user();
+                $insert = $main->insert_article();
     }
 ?>
 
@@ -14,7 +14,7 @@
 <div class="modal-box-admin">
     <div class="modal-admin" id="stop">
     <div class="modal-header">
-    <h2>Insert User</h2>
+    <h2>Insert Article</h2>
     </div>
         <form class="modal-body" method="POST"">
                 <input type="text" name="name" placeholder="Nama" minlength="8" maxlength="100"  />

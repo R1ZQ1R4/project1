@@ -23,7 +23,7 @@
 ?>      
             <form class="modal-body" method="POST"" enctype="multipart/form-data">
                 <input type="number" name="id" value="<?= $row->user_id ?>" readonly/>
-                <input type="text" name="name" placeholder="Nama" minlength="8" maxlength="100" value="<?= $row->user_name ?>" />
+                <input type="text" name="name" placeholder="Nama" minlength="8" maxlength="100" value="<?= $row->name ?>" />
                 <input type="email" name="email" placeholder="Email" minlength="8" maxlength="100" value="<?= $row->email ?>" />
                 <input type="password" name="password" placeholder="Password" minlength="8" maxlength="100" value="<?= $row->password ?>" />
                 <input type="password" name="re_password" placeholder="Re-Password" minlength="8" maxlength="100" value="<?= $row->password ?>"/>

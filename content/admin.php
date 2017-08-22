@@ -9,18 +9,23 @@
 	$_SESSION['level']==0 ? header('Location: ?page=home') : '';
 
 	$control = $_GET['control'];
-	!$control ? header('Location:?page=admin&control=user') : '';
+	!$control ? header('Location:?page=admin&control=article') : '';
 
 	!isset($_GET['sort']) ? $_GET['sort']=1 : '';
 ?>
 	
 <div class="" id="tampilan">
 <?php
-
+	include('content/alert.php');
+	
 	if (isset($_GET['update'])) {
 		include_once('content/admin_' . $control . '_update.php');
 	} else if (isset($_GET['insert'])){
 		include_once('content/admin_' . $control . '_insert.php');
+	}
+
+	else if (isset($_GET['delete'])){
+		$main->delete();
 	}
 ?>
 </div>
@@ -52,14 +57,14 @@
 	<aside>
 		<div class="aside-container">
 			<ul class="menu-list">
-				<li><a href="?page=admin&control=user">user</a></li>	
-				<li><a href="?page=admin&control=category">category</a></li>	
-				<li><a href="?page=admin&control=place">place</a></li>	
 				<li><a href="?page=admin&control=article">article</a></li>	
+				<li><a href="?page=admin&control=category">category</a></li>	
 				<li><a href="?page=admin&control=comment">comment</a></li>	
 				<li><a href="?page=admin&control=hotel">hotel</a></li>	
 				<li><a href="?page=admin&control=hotel_room">room</a></li>	
+				<li><a href="?page=admin&control=place">place</a></li>	
 				<li><a href="?page=admin&control=transaction">transaction</a></li>	
+				<li><a href="?page=admin&control=user">user</a></li>	
 			</ul>
 		</div>
 	</aside>
@@ -76,14 +81,37 @@
 				<button class="btn-plus" id="btn-plus" name="btn-plus" role="submit">Tambah</button>
 				</a>
 			</div>
+
 			<div class="admin-content">
 				<?php
 					switch ($control) {
 						case 'user':
 							$main->user();
 							break;
-						
+						case 'category':
+							$main->category();
+							break;
+						case 'comment':
+							$main->comment();
+							break;
+						case 'hotel':
+							$main->hotel();
+							break;
+						case 'room':
+							$main->room();
+							break;
+						case 'place':
+							$main->place();
+							break;
+						case 'transaction':
+							$main->transaction();
+							break;
+						case 'article':
+							$main->article();
+							break;
+
 						default:
+							$main->article();
 							break;
 					}
 				?>

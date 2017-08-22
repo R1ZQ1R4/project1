@@ -150,6 +150,7 @@
 	position: relative;
 }
 .preview-float{
+	color: #333;
 	padding: 16px;
 	z-index: 100;
 	top: 50%;
@@ -157,6 +158,9 @@
 	width: 300px;
 	position: absolute;
 	display: none;
+}
+div.preview-float{
+	text-align: left;
 }
 .pagination::before{
 	margin: 20px;

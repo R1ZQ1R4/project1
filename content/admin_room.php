@@ -21,7 +21,7 @@
 				?>
 					<tr>
 						<td><?php echo $no; $no++; ?></td>
-						<td><?= $row->user_name ?></td>
+						<td><?= $row->name ?></td>
 						<td class="min-width">
 							<button class="btn-control relative">preview
 							<img src=" assets/img/<?= $row->picture ?>" class="preview-float">

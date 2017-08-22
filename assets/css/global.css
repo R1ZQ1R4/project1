@@ -176,7 +176,7 @@ footer:hover{
 
 
 /*animation frame*/
-.bounce, .modal, .modal-admin, .preview-image{
+.bounce, .modal, .modal-admin, .preview-float{
 	animation: bounce 500ms ease-in-out;
 }
 
