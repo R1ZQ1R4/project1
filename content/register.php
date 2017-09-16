@@ -5,7 +5,7 @@
         $email = $_POST['email'];
         $pass = $_POST['password'];
         $re_pass = $_POST['re_password'];
-        $level = 'user';
+        $level = 0;
 
         if ( !empty($name) AND !empty($email) AND !empty($pass) AND !empty($re_pass)) {
             
@@ -15,7 +15,7 @@
                 // $email = $mysqli->real_escape_string($email);
                 // $pass = $mysqli->real_escape_string($pass);
 
-                $stmt = $mysqli->prepare("INSERT INTO user (name, email, password, level) VALUES (?, ?, ?, ?)");
+                $stmt = $mysqli->prepare("INSERT INTO user (user_name, email, password, level) VALUES (?, ?, ?, ?)");
                 $stmt->bind_param("ssss", $name, $email, $pass, $level);
                 // $result = mysqli_query($mysqli, $insert);
                 $stmt->execute();
@@ -31,7 +31,7 @@
     }
 ?>
 
-<div class="wrap-modal">
+<div class="wrap-modal none" id="register-modal">
     <div class="modal-box">
         <div class="modal">
         <div class="modal-header">
@@ -58,7 +58,7 @@
                 <div class="clear"></div>
             </form>
         <div class="modal-footer">
-            <a class="form-link" href="?page=login">Sudah punya akun !</a>
+            <a class="form-link login-btn" href="?page=login" class="switcher">Sudah punya akun !</a>
         </div>
         </div>
     </div>

@@ -63,8 +63,12 @@
 				<li><a href="?page=admin&control=hotel">hotel</a></li>	
 				<li><a href="?page=admin&control=hotel_room">room</a></li>	
 				<li><a href="?page=admin&control=place">place</a></li>	
-				<li><a href="?page=admin&control=transaction">transaction</a></li>	
-				<li><a href="?page=admin&control=user">user</a></li>	
+				<li><a href="?page=admin&control=user">user</a></li>
+				<hr>
+				<li><a href="?page=admin&control=report">report</a></li>	
+				<li><a href="?page=admin&control=transaction">transaction</a></li>
+				<li><a href="?page=admin&control=transaction_history">transaction history</a></li>	
+	
 			</ul>
 		</div>
 	</aside>
@@ -76,10 +80,20 @@
 				<div>
 					<h1><?= $control ?></h1>
 				</div>
+				<?php
+					if( $control == "transaction_history" || $control == "report"){
+				?>
+						
+				<?php
+					}else{
 
-				<a href="?page=admin&sort=<?= $_GET['sort'] ?>&control=<?= $control ?>&insert=true">
-				<button class="btn-plus" id="btn-plus" name="btn-plus" role="submit">Tambah</button>
-				</a>
+				?>
+						<a href="?page=admin&sort=<?= $_GET['sort'] ?>&control=<?= $control ?>&insert=true">
+						<button class="btn-plus" id="btn-plus" name="btn-plus" role="submit">Tambah</button>
+						</a>
+				<?php
+					}
+				?>
 			</div>
 
 			<div class="admin-content">
@@ -97,7 +111,7 @@
 						case 'hotel':
 							$main->hotel();
 							break;
-						case 'room':
+						case 'hotel_room':
 							$main->room();
 							break;
 						case 'place':
@@ -108,6 +122,12 @@
 							break;
 						case 'article':
 							$main->article();
+							break;
+						case 'report':
+							$main->report();
+							break;
+						case 'transaction_history':
+							$main->transaction_history();
 							break;
 
 						default:

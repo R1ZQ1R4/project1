@@ -27,10 +27,14 @@
                 <input type="email" name="email" placeholder="Email" minlength="8" maxlength="100" value="<?= $row->email ?>" />
                 <input type="password" name="password" placeholder="Password" minlength="8" maxlength="100" value="<?= $row->password ?>" />
                 <input type="password" name="re_password" placeholder="Re-Password" minlength="8" maxlength="100" value="<?= $row->password ?>"/>
+                <label>
                 <select name="level">
                     <option value="0" selected>user</option>
                     <option value="1">admin</option>
+                    <option value="2">operator</option>
+
                 </select>
+                User</label>
                 <input type="file" name="picture" value="<?= $row->picture ?>"/>
                 <button class="btn btn-submit callback" name="btn_update">submit</button>
                 <div class="clear"></div>

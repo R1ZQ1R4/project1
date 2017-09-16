@@ -1,11 +1,11 @@
 <table class="admin-table">
 				<thead>
 					<tr>
-						<th class="min-width">No</th>
+						<th>No</th>
 						<th>Nama</th>
-						<th class="min-width">Gambar</th>	
+						<th>Gambar</th>	
 						<th>email</th>
-						<th class="min-width">password</th>
+						<th>password</th>
 						<th>level</th>
 						<th>Control</th>
 					</tr>
@@ -20,7 +20,7 @@
 				
 				?>
 					<tr>
-						<td><?php echo $no; $no++; ?></td>
+						<td class="min-width"><?php echo $no; $no++; ?></td>
 						<td><?= $row->user_name ?></td>
 						<td class="min-width">
 							<button class="btn-control relative">preview
@@ -30,15 +30,22 @@
 						<td>
 							<?= $row->email ?>
 						</td>
-						<td class="">
+						<td class="min-width">
 							********
 						</td>
 						<td>
-						<?php 
-						if($row->level==0){
-							echo "user";
-						} else{
-							echo "admin";
+						<?php
+						$level = $row->level; 
+						switch ($level){
+							case 0:
+								echo "user";
+								break;
+							case 1:
+								echo "admin";
+								break;
+							case 2:
+								echo "operator";
+								break;
 						}
 						?>
 						</td>

@@ -1,4 +1,6 @@
 .wrap-modal{
+	left: 0;
+	top: 0;
 	z-index: 9999;
 	background: rgba(0,0,0,0.75);
 	position: fixed;
@@ -29,6 +31,7 @@
 }
 
 .modal-admin{
+	box-sizing: border-box;
 	margin: 60px auto 120px;
 	min-width: 280px;
 	width: 50%;
@@ -51,13 +54,15 @@
 	border-right: 0;
 }
 
-.modal-body input{
-	color: #333;
-	display: block;
-	width: 100%;
+.modal-body textarea{
+	min-height: 240px;
 }
 
-.modal-body input{
+.modal-body input, .modal-body textarea{
+	color: #333;
+	display: block;
+	max-width: 100%;
+	width: 100%;
 	font-weight: 600;
 	font-size: 1rem;
 	box-sizing: border-box;
@@ -67,12 +72,23 @@
 	border-bottom: 2px solid #dddddd;
 }
 .modal-body input[type=file]{
+	padding-left: 0;
+	border-bottom: 0;
 	margin: 8px 0;
+}
+.modal-body label, .form-search label{
+	font-weight: 800;
+	color: #aaa;
+	display: block;
+	padding: 8px 6px 8px 0;
+
 }
 .modal-body select{
-	margin: 8px 0;
+	width: 160px;
+	/*display: block;*/
+	margin: 8px 16px 8px 0;
 }
-.modal-body select, .modal-body select option{
+.modal-body select, .modal-body select option, .form-search select, .form-search select option{
 	padding: 8px 16px;
 	font-size: 1rem;
 	color: #333;
@@ -86,6 +102,36 @@
 	float: right;
 	margin-right: -1em;
 
+}
+
+.form-search{
+	align-items: center;
+	padding: 1rem;
+	display: flex;
+}
+
+.form-search .width-input{
+	display: inline-flex;
+	margin: 0;
+}
+
+.form-search label{
+	margin: 0 auto 0 0;
+	padding-right: 20px;
+}
+.form-search input, .form-search select{
+	color: #333;
+	font-weight: 600;
+	font-size: 1rem;
+	box-sizing: border-box;
+	padding: 8px 6px;
+	margin-left: 1em;
+	border: 2px solid #dddddd;
+}
+
+.form-search button{
+	width: 120px;
+	margin-right: 20px;
 }
 
 .modal-footer{

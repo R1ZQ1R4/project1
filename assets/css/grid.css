@@ -27,7 +27,6 @@ xl = extra large >= 1200px
 	display: flex;
 	flex-flow: row wrap;
 	margin: 0 -15px;
-
 }
 
 .card, .card-2, .card-50{
@@ -37,19 +36,29 @@ xl = extra large >= 1200px
 	margin-bottom: 30px;
 	box-sizing: border-box;
 
+
 }
 .card{
-	width: 33.3333%;
+	margin-left: 0;
+	margin-right: 0;
+	width: 33%;
+	max-width: 33.3333%;
 }
 .card-2{
 	width: 25%;
+	max-width: 25%;
 }
 .card-50{
 	width: 50%;
+	max-width: 50%;
 }
 .card .card-item{
 	cursor: pointer;
 	display: block;
+}
+.card-item{
+	width: 100%;
+
 }
 .card .card-item:hover,
 .card-2 .card-item:hover{
@@ -68,7 +77,7 @@ xl = extra large >= 1200px
 	height: auto;
 }
 .card-item .card-overlay{
-	transition: transform ease-in-out 300ms;
+	transition: opacity ease-in-out 300ms;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -78,12 +87,13 @@ xl = extra large >= 1200px
 	top: 0;
 	left: 0;
 	background: rgba(0,0,0,0.7);
-	transform: scale(0);
+	opacity: 0;
 }
 .card-item:hover .card-overlay{
-	transform: scale(1);
+	opacity: 1;
 }
 .card-overlay .overlay-title{
+	text-transform: capitalize;
 	font-size: 2rem;
 	color: #fff;
 }

@@ -61,6 +61,10 @@ $(document).ready(function() {
     $('.callback').click(function() {
     	return confirm('Apa anda yakin ?');
     });
+
+    $('#print').click(function() {
+    	window.print();
+    });
     // $('.btn-update').on('click', function() {
     // 	$('#update').removeClass('none');
     // });
@@ -70,6 +74,17 @@ $(document).ready(function() {
 
     // 	$(location).attr('href', 'proses/delete.php?id=' + link + '&type=' + type);
     // });
+    $('.login-btn').click(function(event) {
+    	event.preventDefault();
+    	$('#login-modal').removeClass('none');
+    	$('#register-modal').addClass('none');
+    });
+    $('.register-btn').click(function(event) {
+    	event.preventDefault();
+    	$('#register-modal').removeClass('none');
+    	$('#login-modal').addClass('none');
+    });
+
 
     wrap.on('click', function(event) {
     	event.stopPropagation();

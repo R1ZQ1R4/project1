@@ -44,6 +44,10 @@ main .preview-content h2{
 	font-size: 600;
 	margin-bottom: 30px;
 }
+main .preview-content h3{
+	text-transform: capitalize;
+	line-height: 30px;
+}
 main .preview-content p{
 	font-size: 120%;
 }
@@ -51,6 +55,18 @@ main .preview-image{
 	width: 42%;
 	border-radius: 3px;
 	overflow: hidden;
+}
+main .preview-content span{
+	display: inline-flex;
+	display: inline-moz-flex;
+	display: inline-ms-flex;
+	display: inline-o-flex;
+	display: inline-webkit-flex;
+	width: 160px;
+}
+main .preview-content span.value{
+	font-size: 90%;
+	margin-left: 20px;
 }
 main .preview-image img{
 	display: block;
@@ -83,4 +99,15 @@ main .main-article .side-img{
 }
 main .main-article .side-content{
 	width: 33.3333%;
+}
+
+.comment-box{
+	margin-bottom: 30px;
+	border-radius: 3px;
+	padding: 16px 24px;
+	background: #f5f5f5;
+}
+
+.comment-box .comment-content{
+	padding: 16px 0;
 }

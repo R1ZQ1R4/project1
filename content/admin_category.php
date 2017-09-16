@@ -1,7 +1,7 @@
 <table class="admin-table">
 				<thead>
 					<tr>
-						<th class="min-width">No</th>
+						<th>No</th>
 						<th>Nama</th>
 						<th>Control</th>
 					</tr>
@@ -16,8 +16,8 @@
 				
 				?>
 					<tr>
-						<td><?php echo $no; $no++; ?></td>
-						<td><?= $row->category_name ?></td>
+						<td class="min-width"><?php echo $no; $no++; ?></td>
+						<td class="max-width"><?= $row->category_name ?></td>
 						
 						<td>
 							<a href="?page=admin&sort=<?= $_GET['sort'] ?>&control=<?= $_GET['control'] ?>&update=<?= $row->category_id ?>

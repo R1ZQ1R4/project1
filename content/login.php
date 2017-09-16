@@ -1,7 +1,5 @@
 <?php
 
-    isset($_SESSION['name']) ? header("Location: ?page=admin") : '';
-
     // if(isset($_POST['btn_login'])){
     if(isset($_POST['btn_login'])){
 
@@ -28,7 +26,7 @@
             // $stmt->execute();
 
             //versi 2 code OOP version
-            $query = $mysqli->query("SELECT user_name, level FROM user WHERE email='$email' AND password='$pass'");
+            $query = $mysqli->query("SELECT * FROM user WHERE email='$email' AND password='$pass'");
             $result = $query->fetch_assoc();
             $row = $query->num_rows;
             
@@ -36,8 +34,10 @@
                 $alert_danger = "Email atau Password Salah !";
                 
             }else{
+                $_SESSION['id'] = $result['user_id'];
                 $_SESSION['level'] = $result['level'];  
-                $_SESSION['name'] = $result['user_name'];          
+                $_SESSION['name'] = $result['user_name']; 
+                $_SESSION['picture'] = $result['picture'];      
                 header('Location: ?page=admin');
             }
 
@@ -50,7 +50,7 @@
     }
 ?>
 
-<div class="wrap-modal">
+<div class="wrap-modal none" id="login-modal">
     <div class="modal-box">
         <div class="modal" id="stop">
         <div class="modal-header">
@@ -66,13 +66,13 @@
         ?>
         <form class="modal-body" method="POST" id="login_form">
         
-                <input type="email" name="email" id="email" placeholder="Email" minlength="8" maxlength="100"/>
+                <input type="email" name="email" id="email" placeholder="Email" minlength="8" maxlength="100" autofocus/>
                 <input type="password" name="password" id="password" placeholder="Password" minlength="8" maxlength="100" />
                 <button type="submit" class="btn btn-submit" name="btn_login" id="btn_login">submit</button>
                 <div class="clear"></div>
             </form>
         <div class="modal-footer">
-            <a class="form-link" href="?page=register">buat akun !</a>
+            <a class="form-link register-btn" href="?page=register">buat akun !</a>
         </div>
         </div>
     </div>

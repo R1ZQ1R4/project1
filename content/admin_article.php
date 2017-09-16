@@ -1,11 +1,11 @@
 <table class="admin-table">
 				<thead>
 					<tr>
-						<th class="min-width">No</th>
+						<th>No</th>
 						<th>Nama</th>
-						<th class="min-width">konten</th>	
+						<th>konten</th>	
 						<th>tanggal</th>
-						<th class="min-width">gambar</th>
+						<th>gambar</th>
 						<th>tempat</th>
 						<th>penulis</th>
 						<th>category</th>
@@ -23,8 +23,8 @@
 				
 				?>
 					<tr>
-						<td><?php echo $no; $no++; ?></td>
-						<td><?= $row->article_name ?></td>
+						<td class="min-width"><?php echo $no; $no++; ?></td>
+						<td class="max-width"><?= $row->article_name ?></td>
 						<td class="min-width">
 							<button class="btn-control relative">load
 								<div class="preview-float">
@@ -38,22 +38,22 @@
 						
 						<td class="min-width">
 							<button class="btn-control relative">preview
-							<img src=" assets/img/<?= $row->article_image ?>" class="preview-float">
+								<img src="assets/img/<?= $row->article_picture ?>" class="preview-float">
 							</button>
 						</td>
-						<td>
+						<td class="max-width">
 							<?= $row->place_name ?>
 						</td>
-						<td>
+						<td class="max-width">
 							<?= $row->user_name ?>
 						</td>
-						<td>
+						<td class="max-width">
 							<?= $row->category_name ?>
 						</td>
-						<td>
+						<td class="min-width">
 							<?= $row->article_view ?>
 						</td>
-						<td>
+						<td class="min-width">
 							<a href="?page=admin&sort=<?= $_GET['sort'] ?>&control=<?= $_GET['control'] ?>&update=<?= $row->article_id ?>
 							">
 							<button class="btn-control btn-update">Edit</button>

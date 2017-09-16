@@ -22,8 +22,10 @@
 
 ?>      
             <form class="modal-body" method="POST"" enctype="multipart/form-data">
-                <input type="number" name="id" value="<?= $row->comment_id ?>" readonly/>
-                <input type="text" name="name" placeholder="Nama" maxlength="100" value="<?= $row->comment_name ?>" />
+                <input type="text" name="id" value="<?= $row->comment_id ?>">
+                <textarea name="content" placeholder="Comment Here"><?= $row->comment_content?></textarea>
+                <label>   
+                
                 <button class="btn btn-submit callback" name="btn_update">submit</button>
                 <div class="clear"></div>
             </form>

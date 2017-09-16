@@ -126,8 +126,17 @@
 	width: 20px;
 	text-align: center;
 }
+.admin-table td.max-width{
+	max-width: 160px;
+	text-overflow: ellipsis;
+	overflow-x: hidden;
+}
 .admin-table td:last-child{
 	width: 120px;
+}
+
+.admin-table td:last-child{
+	width: auto;
 }
 .admin-footer{
 	border-top: 1px solid rgba(0,0,0,0.16);
@@ -156,6 +165,8 @@
 	top: 50%;
 	left: 50%;
 	width: 300px;
+	max-height: 300px;
+	overflow-y: auto;
 	position: absolute;
 	display: none;
 }
